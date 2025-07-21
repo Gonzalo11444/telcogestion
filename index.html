@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TelcoGestión - Gestión de Antenas Móviles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      background: url('https://source.unsplash.com/1600x600/?antenna,technology') center/cover no-repeat;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    header .btn {
+      margin-top: 20px;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .icon-box {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .icon-box i {
+      font-size: 40px;
+      color: #0d6efd;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #f8f9fa;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>TelcoGestión</h1>
+    <p>Optimización y Gestión de Contratos de Antenas Móviles</p>
+    <a href="#contacto" class="btn btn-light">Consulta Gratis</a>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TelcoGestión</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="nosotros" class="container">
+    <h2 class="text-center">Quiénes Somos</h2>
+    <p>TelcoGestión es una empresa líder en la gestión y optimización de contratos de antenas móviles. Con más de 10
+      años de experiencia, hemos ayudado a cientos de propietarios a maximizar sus ingresos y proteger sus derechos
+      frente a las operadoras.</p>
+    <p>Ubicados en Madrid, trabajamos a nivel nacional ofreciendo soluciones a medida para cada cliente.</p>
+  </section>
+
+  <section id="servicios" class="bg-light">
+    <div class="container">
+      <h2 class="text-center">Nuestros Servicios</h2>
+      <div class="row">
+        <div class="col-md-4 icon-box">
+          <button type="button" class="btn btn-link p-0 text-decoration-none" data-bs-toggle="modal"
+            data-bs-target="#modalContrato">
+            <i class="fas fa-file-contract"></i>
+            <h5>Optimización de Contratos</h5>
+          </button>
+        </div>
+        <div class="col-md-4 icon-box">
+          <button type="button" class="btn btn-link p-0 text-decoration-none" data-bs-toggle="modal"
+            data-bs-target="#modalNegociacion">
+            <i class="fas fa-handshake"></i>
+            <h5>Negociación con Operadores</h5>
+          </button>
+        </div>
+        <div class="col-md-4 icon-box">
+          <button type="button" class="btn btn-link p-0 text-decoration-none" data-bs-toggle="modal"
+            data-bs-target="#modalAuditoria">
+            <i class="fas fa-search-dollar"></i>
+            <h5>Auditoría de Pagos</h5>
+          </button>
+        </div>
+        <div class="col-md-4 icon-box">
+          <button type="button" class="btn btn-link p-0 text-decoration-none" data-bs-toggle="modal"
+            data-bs-target="#modalRenovaciones">
+            <i class="fas fa-calendar-check"></i>
+            <h5>Gestión de Renovaciones</h5>
+          </button>
+        </div>
+        <div class="col-md-4 icon-box">
+          <button type="button" class="btn btn-link p-0 text-decoration-none" data-bs-toggle="modal"
+            data-bs-target="#modalLegal">
+            <i class="fas fa-gavel"></i>
+            <h5>Asesoría Legal</h5>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Modals -->
+    <div class="modal fade" id="modalContrato" tabindex="-1" aria-labelledby="modalContratoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xxl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalContratoLabel">Optimización de Contratos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            Analizamos y mejoramos las condiciones de tus contratos para maximizar tus ingresos y proteger tus derechos.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalNegociacion" tabindex="-1" aria-labelledby="modalNegociacionLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xxl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalNegociacionLabel">Negociación con Operadores</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            Representamos tus intereses en la negociación con las operadoras para obtener las mejores condiciones
+            posibles.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalAuditoria" tabindex="-1" aria-labelledby="modalAuditoriaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xxl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAuditoriaLabel">Auditoría de Pagos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            Realizamos auditorías detalladas para garantizar que los pagos sean correctos y justos.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="beneficios" class="container">
+      <h2 class="text-center">Beneficios</h2>
+      <ul>
+        <li>Maximización de ingresos</li>
+        <li>Protección legal y administrativa</li>
+        <li>Reducción de riesgos contractuales</li>
+        <li>Asesoramiento continuo</li>
+      </ul>
+    </section>
+
+    <section id="testimonios" class="bg-light">
+      <div class="container">
+        <h2 class="text-center">Testimonios</h2>
+        <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active text-center">
+              <blockquote class="blockquote">
+                <p>"Gracias a su asesoría, mejoramos un 30% nuestro contrato."</p>
+                <footer class="blockquote-footer">Cliente satisfecho</footer>
+              </blockquote>
+            </div>
+            <div class="carousel-item text-center">
+              <blockquote class="blockquote">
+                <p>"Muy profesionales y eficaces en la renegociación de contratos."</p>
+                <footer class="blockquote-footer">Propietario de antena</footer>
+              </blockquote>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <style>
+              .carousel-control-prev,
+              .carousel-control-next {
+                filter: none;
+                background-color: #0d6efd !important;
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0.9;
+              }
+
+              .carousel-control-prev-icon,
+              .carousel-control-next-icon {
+                background-color: transparent;
+                filter: invert(1) brightness(2);
+              }
+            </style>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="container">
+      <h2 class="text-center">Preguntas Frecuentes</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faq1">¿Cómo saber si mi contrato es justo?</button></h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Analizamos tu contrato y te brindamos un informe detallado.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#faq2">¿Puedo renegociar mi contrato?</button></h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Sí, te ayudamos a mejorar tus condiciones con los operadores.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#faq3">¿Qué beneficios ofrece su servicio?</button></h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Optimizamos ingresos, protegemos tus derechos y gestionamos trámites legales.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="bg-light">
+      <div class="container">
+        <h2 class="text-center">Contacto</h2>
+        <p class="text-center">Déjanos tus datos y te asesoramos sin compromiso.</p>
+        <form action="https://formspree.io/f/mkgzoadl" method="POST" class="mx-auto" style="max-width:600px;">
+          <div class="mb-3">
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Correo Electrónico" required>
+          </div>
+          <div class="mb-3">
+            <input type="tel" name="telefono" class="form-control" placeholder="Teléfono">
+          </div>
+          <div class="mb-3">
+            <textarea name="consulta" class="form-control" placeholder="Tu consulta" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Enviar Consulta</button>
+          <p class="mt-3 text-muted">Nos pondremos en contacto contigo en menos de 24 horas.</p>
+          <p class="text-muted">Tu información es confidencial y no será compartida.</ <input type="hidden"
+              name="_captcha" value="false">
+
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 TelcoGestión. Todos los derechos reservados.</p>
+      <p>Ubicación: Madrid, España</p>
+      <p>Contacto: info@telcogestion.com | Tel: +34 600 123 456</p>
+      <div class="mt-3">
+        <p>Redes Sociales: (pendiente de agregar)</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
