@@ -5,27 +5,17 @@
   <meta charset="UTF-8" />
   <title>TelcoGestión - Gestión de Antenas Móviles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  
-  <!-- FontAwesome -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet"
-  />
-  
-  <!-- AOS (Animate on Scroll) CSS -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    rel="stylesheet"
-  />
-  
-  <style>
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- AOS (Animate on Scroll) CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+  <style>
     header {
       background: url("assets/header-image.png.png") center/cover no-repeat;
       color: white;
@@ -33,7 +23,7 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     }
 
     header h1 {
@@ -72,7 +62,7 @@
       padding: 25px 20px;
       border-radius: 15px;
       background: rgba(255 255 255 / 0.9);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 30px;
       cursor: pointer;
@@ -125,24 +115,29 @@
       color: #0d6efd;
     }
 
-    .carousel-control-prev, .carousel-control-next {
-      filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+    .carousel-control-prev,
+    .carousel-control-next {
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
       width: 2.5rem;
       height: 2.5rem;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(13,110,253,0.8); /* azul Bootstrap, no blanco */
+      background: rgba(13, 110, 253, 0.8);
+      /* azul Bootstrap, no blanco */
       border-radius: 50%;
       opacity: 1;
       border: none;
       color: #fff;
     }
+
     .carousel-control-prev {
       left: 10px;
     }
+
     .carousel-control-next {
       right: 10px;
     }
+
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
       background-image: none;
@@ -154,17 +149,19 @@
       width: 100%;
       height: 100%;
     }
+
     .carousel-control-prev-icon:after {
       content: '\f053';
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
     }
+
     .carousel-control-next-icon:after {
       content: '\f054';
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
     }
-    
+
 
     .carousel-indicators {
       justify-content: center;
@@ -189,7 +186,9 @@
       min-height: 100vh;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #4a9af5 0%, #abf3e2 50%, #ffffff 100%);    }
+      background: linear-gradient(135deg, #4a9af5 0%, #abf3e2 50%, #ffffff 100%);
+    }
+
     .icon-box {
       background-color: rgba(255, 255, 255, 0.8);
       border-radius: 12px;
@@ -200,16 +199,24 @@
       padding: 20px;
       display: block;
     }
+
     .icon-box:hover {
       transform: scale(1.05);
       box-shadow: none;
     }
-    .icon-box i { font-size: 40px; color: #0d6efd; margin-bottom: 10px; }
+
+    .icon-box i {
+      font-size: 40px;
+      color: #0d6efd;
+      margin-bottom: 10px;
+    }
+
     .transparent-carousel .carousel-item {
       background-color: transparent !important;
     }
+
     .transparent-carousel blockquote {
-      background-color: rgba(255,255,255,0.6);
+      background-color: rgba(255, 255, 255, 0.6);
       padding: 20px;
       border-radius: 10px;
       display: inline-block;
@@ -224,501 +231,445 @@
 
   gtag('config', 'G-27W7PCC1NC');
 </script> -->
-<!-- End Google Analytics -->
+  <!-- End Google Analytics -->
 
 </head>
+
 <body>
 
-<header data-aos="fade-down" data-aos-duration="1000">
+  <header data-aos="fade-down" data-aos-duration="1000">
 
-  <a href="#contacto" class="btn btn-light">
-    Consulta Gratis <i class="fas fa-arrow-right ms-2"></i>
-  </a>
-</header>
+    <a href="#contacto" class="btn btn-light">
+      Consulta Gratis <i class="fas fa-arrow-right ms-2"></i>
+    </a>
+  </header>
 
-<nav
-  class="navbar navbar-expand-lg navbar-light bg-light sticky-top"
-  data-aos="fade-down"
-  data-aos-duration="800"
-  data-aos-delay="200"
->
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">TelcoGestión</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#nosotros">Quiénes Somos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#servicios">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#beneficios">Beneficios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#testimonios">Testimonios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#faq">FAQ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contacto">Contacto</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- INTEGRACIÓN DE NUEVO NOSOTROS -->
-<section id="nosotros" class="container" data-aos="fade-up" data-aos-duration="1000">
-  <h2 class="text-center display-5 fw-bold" style="font-weight: 900;">Quiénes Somos</h2>
-
-  <p class="lead text-center display-5 fw-bold" style="font-size: 1.3rem;">TelcoGestión es una empresa líder en la gestión y optimización de contratos de antenas móviles. Con más de 10 años de experiencia, hemos ayudado a cientos de propietarios a maximizar sus ingresos y proteger sus derechos frente a las operadoras.</p>
-  <p class="text-center">
-    Ubicados en Madrid, trabajamos a nivel nacional ofreciendo soluciones a medida para cada cliente.
-  </p>
-  <div class="text-center mt-4">
-    <a href="quienes-somos.html" class="btn btn-primary">Leer más sobre nosotros</a>
-  </div>
-  <!-- Manteniendo imágenes originales debajo -->
-  <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" aria-label="Imágenes sobre gestión y tecnología">
-    <img src="https://source.unsplash.com/600x400/?telecommunications" alt="Tecnología de telecomunicaciones" loading="lazy" class="rounded shadow" style="max-width: 300px;" />
-    <img src="https://source.unsplash.com/600x400/?mobile-antenna" alt="Antena móvil moderna" loading="lazy" class="rounded shadow" style="max-width: 300px;" />
-    <img src="https://source.unsplash.com/600x400/?contract" alt="Firma de contratos" loading="lazy" class="rounded shadow" style="max-width: 300px;" />
-  </div>
-</section>
-
-<!-- INTEGRACIÓN DE NUEVO SERVICIOS -->
-<section id="servicios" class="bg-light" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-  <div class="container">
-    <h2 class="text-center mb-5">Nuestros Servicios</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Optimización de Contratos" data-description="Revisamos y renegociamos tus contratos actuales para que obtengas mejores condiciones económicas.">
-        <i class="fas fa-file-contract"></i>
-        <h5>Optimización de Contratos</h5>
-      </div>
-      <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Negociación con Operadores" data-description="Intermediamos con las operadoras para asegurar acuerdos justos y beneficiosos para ti.">
-        <i class="fas fa-handshake"></i>
-        <h5>Negociación con Operadores</h5>
-      </div>
-      <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Auditoría de Pagos" data-description="Revisamos que los pagos estén correctamente ejecutados según contrato.">
-        <i class="fas fa-search-dollar"></i>
-        <h5>Auditoría de Pagos</h5>
-      </div>
-      <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Gestión de Renovaciones" data-description="Te avisamos y ayudamos en el proceso de renovación de contratos a su vencimiento.">
-        <i class="fas fa-calendar-check"></i>
-        <h5>Gestión de Renovaciones</h5>
-      </div>
-      <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Consultoría Estratégica" data-description="Te ayudamos a identificar nuevas oportunidades de negocio relacionadas con tus espacios y antenas.">
-        <i class="fas fa-lightbulb"></i>
-        <h5>Consultoría Estratégica</h5>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INTEGRACIÓN DE NUEVO BENEFICIOS -->
-<section id="beneficios" class="container my-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-  <h2 class="text-center mb-5">Beneficios</h2>
-  <ul class="list-group list-group-flush fs-5 mx-auto" style="max-width: 650px;">
-    <li class="list-group-item">
-      <i class="fas fa-check-circle text-success me-2"></i>
-      Maximización de ingresos
-    </li>
-    <li class="list-group-item">
-      <i class="fas fa-check-circle text-success me-2"></i>
-      Protección legal y administrativa
-    </li>
-    <li class="list-group-item">
-      <i class="fas fa-check-circle text-success me-2"></i>
-      Reducción de riesgos contractuales
-    </li>
-    <li class="list-group-item">
-      <i class="fas fa-check-circle text-success me-2"></i>
-      Asesoramiento continuo
-    </li>
-  </ul>
-</section>
-
-<!-- INTEGRACIÓN DE NUEVO TESTIMONIOS -->
-<section id="testimonios" class="bg-light transparent-carousel" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-  <div class="container">
-    <h2 class="text-center mb-5">Testimonios</h2>
-    <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active text-center">
-          <blockquote class="blockquote">
-            <p>"Gracias a su asesoría, mejoramos un 30% nuestro contrato."</p>
-            <footer class="blockquote-footer">Cliente satisfecho</footer>
-          </blockquote>
-        </div>
-        <div class="carousel-item text-center">
-          <blockquote class="blockquote">
-            <p>"Muy profesionales y eficaces en la renegociación de contratos."</p>
-            <footer class="blockquote-footer">Propietario de antena</footer>
-          </blockquote>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" data-aos="fade-down" data-aos-duration="800"
+    data-aos-delay="200">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">TelcoGestión</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#nosotros">Quiénes Somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#beneficios">Beneficios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonios">Testimonios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INTEGRACIÓN DE NUEVO NOSOTROS -->
+  <section id="nosotros" class="container" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-center display-5 fw-bold" style="font-weight: 900;">Quiénes Somos</h2>
+
+    <p class="lead text-center display-5 fw-bold" style="font-size: 1.3rem;">TelcoGestión es una empresa líder en la
+      gestión y optimización de contratos de antenas móviles. Con más de 10 años de experiencia, hemos ayudado a cientos
+      de propietarios a maximizar sus ingresos y proteger sus derechos frente a las operadoras.</p>
+    <p class="text-center">
+      Ubicados en Madrid, trabajamos a nivel nacional ofreciendo soluciones a medida para cada cliente.
+    </p>
+    <div class="text-center mt-4">
+      <a href="quienes-somos.html" class="btn btn-primary">Leer más sobre nosotros</a>
+    </div>
+    <!-- Manteniendo imágenes originales debajo -->
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" aria-label="Imágenes sobre gestión y tecnología">
+      <img src="https://source.unsplash.com/600x400/?telecommunications" alt="Tecnología de telecomunicaciones"
+        loading="lazy" class="rounded shadow" style="max-width: 300px;" />
+      <img src="https://source.unsplash.com/600x400/?mobile-antenna" alt="Antena móvil moderna" loading="lazy"
+        class="rounded shadow" style="max-width: 300px;" />
+      <img src="https://source.unsplash.com/600x400/?contract" alt="Firma de contratos" loading="lazy"
+        class="rounded shadow" style="max-width: 300px;" />
+    </div>
+  </section>
+
+  <!-- INTEGRACIÓN DE NUEVO SERVICIOS -->
+  <section id="servicios" class="bg-light" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div class="container">
+      <h2 class="text-center mb-5">Nuestros Servicios</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Optimización de Contratos"
+          data-description="Revisamos y renegociamos tus contratos actuales para que obtengas mejores condiciones económicas.">
+          <i class="fas fa-file-contract"></i>
+          <h5>Optimización de Contratos</h5>
+        </div>
+        <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Negociación con Operadores"
+          data-description="Intermediamos con las operadoras para asegurar acuerdos justos y beneficiosos para ti.">
+          <i class="fas fa-handshake"></i>
+          <h5>Negociación con Operadores</h5>
+        </div>
+        <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Auditoría de Pagos"
+          data-description="Revisamos que los pagos estén correctamente ejecutados según contrato.">
+          <i class="fas fa-search-dollar"></i>
+          <h5>Auditoría de Pagos</h5>
+        </div>
+        <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Gestión de Renovaciones"
+          data-description="Te avisamos y ayudamos en el proceso de renovación de contratos a su vencimiento.">
+          <i class="fas fa-calendar-check"></i>
+          <h5>Gestión de Renovaciones</h5>
+        </div>
+        <div class="col-md-4 icon-box" tabindex="0" role="button" aria-label="Consultoría Estratégica"
+          data-description="Te ayudamos a identificar nuevas oportunidades de negocio relacionadas con tus espacios y antenas.">
+          <i class="fas fa-lightbulb"></i>
+          <h5>Consultoría Estratégica</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRACIÓN DE NUEVO BENEFICIOS -->
+  <section id="beneficios" class="container my-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+    <h2 class="text-center mb-5">Beneficios</h2>
+    <ul class="list-group list-group-flush fs-5 mx-auto" style="max-width: 650px;">
+      <li class="list-group-item">
+        <i class="fas fa-check-circle text-success me-2"></i>
+        Maximización de ingresos
+      </li>
+      <li class="list-group-item">
+        <i class="fas fa-check-circle text-success me-2"></i>
+        Protección legal y administrativa
+      </li>
+      <li class="list-group-item">
+        <i class="fas fa-check-circle text-success me-2"></i>
+        Reducción de riesgos contractuales
+      </li>
+      <li class="list-group-item">
+        <i class="fas fa-check-circle text-success me-2"></i>
+        Asesoramiento continuo
+      </li>
+    </ul>
+  </section>
+
+  <!-- INTEGRACIÓN DE NUEVO TESTIMONIOS -->
+  <section id="testimonios" class="bg-light transparent-carousel" data-aos="fade-up" data-aos-duration="1000"
+    data-aos-delay="400">
+    <div class="container">
+      <h2 class="text-center mb-5">Testimonios</h2>
+      <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <blockquote class="blockquote">
+              <p>"Gracias a su asesoría, mejoramos un 30% nuestro contrato."</p>
+              <footer class="blockquote-footer">Cliente satisfecho</footer>
+            </blockquote>
+          </div>
+          <div class="carousel-item text-center">
+            <blockquote class="blockquote">
+              <p>"Muy profesionales y eficaces en la renegociación de contratos."</p>
+              <footer class="blockquote-footer">Propietario de antena</footer>
+            </blockquote>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manteniendo FAQ y Contacto originales -->
+  <section id="faq" class="container my-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+    <h2 class="text-center mb-5">Preguntas Frecuentes</h2>
+    <div class="accordion" id="faqAccordion" role="list">
+      <div class="accordion-item" role="listitem">
+        <h3 class="accordion-header" id="faqHeadingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne"
+            aria-expanded="true" aria-controls="faqCollapseOne">
+            ¿Cómo funciona la optimización de contratos?
+          </button>
+        </h3>
+        <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Analizamos los términos de tus contratos con las operadoras y negociamos mejores condiciones para ti.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" role="listitem">
+        <h3 class="accordion-header" id="faqHeadingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+            ¿Cuánto tiempo tarda el proceso?
+          </button>
+        </h3>
+        <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Normalmente el proceso completo tarda entre 1 y 3 meses, dependiendo de la complejidad del contrato.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" role="listitem">
+        <h3 class="accordion-header" id="faqHeadingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+            ¿Qué coste tiene el servicio?
+          </button>
+        </h3>
+        <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            El coste depende del tipo de servicio y la complejidad del caso. Ofrecemos una primera consulta gratuita y
+            presupuesto personalizado.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" role="listitem">
+        <h3 class="accordion-header" id="faqHeadingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+            ¿Puedo renegociar mi contrato si ya está firmado?
+          </button>
+        </h3>
+        <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sí, en muchos casos es posible renegociar condiciones o preparar la renovación para obtener mejores
+            beneficios.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" role="listitem">
+        <h3 class="accordion-header" id="faqHeadingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+            ¿Trabajan solo en Madrid o en toda España?
+          </button>
+        </h3>
+        <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Ofrecemos nuestros servicios en toda España, tanto presencialmente como de forma online.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item" role="listitem">
+        <h3 class="accordion-header" id="faqHeadingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
+            ¿Qué tipo de propiedades pueden beneficiarse?
+          </button>
+        </h3>
+        <div id="faqCollapseSix" class="accordion-collapse collapse" aria-labelledby="faqHeadingSix"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Trabajamos con propietarios de edificios, comunidades, empresas y particulares que tengan contratos de
+            antenas móviles.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="container my-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+    <h2 class="text-center mb-4">Contacto</h2>
+    <form class="mx-auto" style="max-width: 500px;" aria-label="Formulario de contacto">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required />
+      </div>
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TelcoGestión. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Modal para mostrar servicios -->
+  <div class="modal fade" id="servicioModal" tabindex="-1" aria-labelledby="servicioModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="servicioModalLabel">Servicio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="servicioModalBody">
+          Aquí irá la descripción del servicio seleccionado.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- Manteniendo FAQ y Contacto originales -->
-<section
-  id="faq"
-  class="container my-5"
-  data-aos="fade-up"
-  data-aos-duration="1000"
-  data-aos-delay="500"
->
-  <h2 class="text-center mb-5">Preguntas Frecuentes</h2>
-  <div class="accordion" id="faqAccordion" role="list">
-    <div class="accordion-item" role="listitem">
-      <h3 class="accordion-header" id="faqHeadingOne">
-        <button
-          class="accordion-button"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#faqCollapseOne"
-          aria-expanded="true"
-          aria-controls="faqCollapseOne"
-        >
-          ¿Cómo funciona la optimización de contratos?
-        </button>
-      </h3>
-      <div
-        id="faqCollapseOne"
-        class="accordion-collapse collapse show"
-        aria-labelledby="faqHeadingOne"
-        data-bs-parent="#faqAccordion"
-      >
-        <div class="accordion-body">
-          Analizamos los términos de tus contratos con las operadoras y negociamos mejores condiciones para ti.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item" role="listitem">
-      <h3 class="accordion-header" id="faqHeadingTwo">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#faqCollapseTwo"
-          aria-expanded="false"
-          aria-controls="faqCollapseTwo"
-        >
-          ¿Cuánto tiempo tarda el proceso?
-        </button>
-      </h3>
-      <div
-        id="faqCollapseTwo"
-        class="accordion-collapse collapse"
-        aria-labelledby="faqHeadingTwo"
-        data-bs-parent="#faqAccordion"
-      >
-        <div class="accordion-body">
-          Normalmente el proceso completo tarda entre 1 y 3 meses, dependiendo de la complejidad del contrato.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item" role="listitem">
-      <h3 class="accordion-header" id="faqHeadingThree">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#faqCollapseThree"
-          aria-expanded="false"
-          aria-controls="faqCollapseThree"
-        >
-          ¿Qué coste tiene el servicio?
-        </button>
-      </h3>
-      <div
-        id="faqCollapseThree"
-        class="accordion-collapse collapse"
-        aria-labelledby="faqHeadingThree"
-        data-bs-parent="#faqAccordion"
-      >
-        <div class="accordion-body">
-          El coste depende del tipo de servicio y la complejidad del caso. Ofrecemos una primera consulta gratuita y presupuesto personalizado.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item" role="listitem">
-      <h3 class="accordion-header" id="faqHeadingFour">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#faqCollapseFour"
-          aria-expanded="false"
-          aria-controls="faqCollapseFour"
-        >
-          ¿Puedo renegociar mi contrato si ya está firmado?
-        </button>
-      </h3>
-      <div
-        id="faqCollapseFour"
-        class="accordion-collapse collapse"
-        aria-labelledby="faqHeadingFour"
-        data-bs-parent="#faqAccordion"
-      >
-        <div class="accordion-body">
-          Sí, en muchos casos es posible renegociar condiciones o preparar la renovación para obtener mejores beneficios.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item" role="listitem">
-      <h3 class="accordion-header" id="faqHeadingFive">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#faqCollapseFive"
-          aria-expanded="false"
-          aria-controls="faqCollapseFive"
-        >
-          ¿Trabajan solo en Madrid o en toda España?
-        </button>
-      </h3>
-      <div
-        id="faqCollapseFive"
-        class="accordion-collapse collapse"
-        aria-labelledby="faqHeadingFive"
-        data-bs-parent="#faqAccordion"
-      >
-        <div class="accordion-body">
-          Ofrecemos nuestros servicios en toda España, tanto presencialmente como de forma online.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item" role="listitem">
-      <h3 class="accordion-header" id="faqHeadingSix">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#faqCollapseSix"
-          aria-expanded="false"
-          aria-controls="faqCollapseSix"
-        >
-          ¿Qué tipo de propiedades pueden beneficiarse?
-        </button>
-      </h3>
-      <div
-        id="faqCollapseSix"
-        class="accordion-collapse collapse"
-        aria-labelledby="faqHeadingSix"
-        data-bs-parent="#faqAccordion"
-      >
-        <div class="accordion-body">
-          Trabajamos con propietarios de edificios, comunidades, empresas y particulares que tengan contratos de antenas móviles.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- Bootstrap Bundle JS (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
 
-<section
-  id="contacto"
-  class="container my-5"
-  data-aos="fade-up"
-  data-aos-duration="1000"
-  data-aos-delay="600"
->
-  <h2 class="text-center mb-4">Contacto</h2>
-  <form class="mx-auto" style="max-width: 500px;" aria-label="Formulario de contacto">
-    <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre</label>
-      <input
-        type="text"
-        class="form-control"
-        id="nombre"
-        placeholder="Tu nombre"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Correo Electrónico</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="nombre@ejemplo.com"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="mensaje" class="form-label">Mensaje</label>
-      <textarea
-        class="form-control"
-        id="mensaje"
-        rows="4"
-        placeholder="Escribe tu mensaje aquí"
-        required
-      ></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary w-100">Enviar</button>
-  </form>
-</section>
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-<footer>
-  <p>&copy; 2025 TelcoGestión. Todos los derechos reservados.</p>
-</footer>
-
-<!-- Modal para mostrar servicios -->
-<div
-  class="modal fade"
-  id="servicioModal"
-  tabindex="-1"
-  aria-labelledby="servicioModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="servicioModalLabel">Servicio</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Cerrar"
-        ></button>
-      </div>
-      <div class="modal-body" id="servicioModalBody">
-        Aquí irá la descripción del servicio seleccionado.
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
-          Cerrar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Bootstrap Bundle JS (incluye Popper) -->
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  crossorigin="anonymous"
-></script>
-
-<!-- AOS Animate On Scroll JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-<script>
-  AOS.init({
-    once: true,
-  });
-
-  // Código para mostrar el modal con el texto del servicio
-  document.querySelectorAll('.icon-box').forEach((box) => {
-    box.addEventListener('click', () => {
-      const titulo = box.querySelector('h5').textContent;
-      const descripcion = box.querySelector('p') ? box.querySelector('p').textContent : box.getAttribute('data-description');
-
-      document.getElementById('servicioModalLabel').textContent = titulo;
-      document.getElementById('servicioModalBody').textContent = descripcion;
-
-      const modal = new bootstrap.Modal(
-        document.getElementById('servicioModal')
-      );
-      modal.show();
+  <script>
+    AOS.init({
+      once: true,
     });
 
-    // Accesibilidad: abrir con Enter o espacio
-    box.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        box.click();
+    // Código para mostrar el modal con el texto del servicio
+    document.querySelectorAll('.icon-box').forEach((box) => {
+      box.addEventListener('click', () => {
+        const titulo = box.querySelector('h5').textContent;
+        const descripcion = box.querySelector('p') ? box.querySelector('p').textContent : box.getAttribute('data-description');
+
+        document.getElementById('servicioModalLabel').textContent = titulo;
+        document.getElementById('servicioModalBody').textContent = descripcion;
+
+        const modal = new bootstrap.Modal(
+          document.getElementById('servicioModal')
+        );
+        modal.show();
+      });
+
+      // Accesibilidad: abrir con Enter o espacio
+      box.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          box.click();
+        }
+      });
+    });
+  </script>
+  <!-- Banner de Cookies -->
+  <div id="cookieConsent"
+    style="position: fixed; bottom: 0; width: 100%; background: #222; color: white; padding: 15px; text-align: center; font-family: sans-serif; z-index: 9999; display: none;">
+    <p>Utilizamos cookies técnicas necesarias para el funcionamiento del sitio y cookies analíticas de terceros (Google
+      Analytics) para mejorar tu experiencia. Puedes aceptar todas las cookies, rechazar las no esenciales o consultar
+      nuestra <a href="politica-de-cookies.html" style="color: #00f; text-decoration: underline;">Política de
+        Cookies</a>
+      para más información.</p>
+    <button id="acceptCookies"
+      style="margin: 5px; padding: 8px 15px; background: #4CAF50; color: white; border: none; cursor: pointer;">Aceptar
+      todas</button>
+    <button id="rejectCookies"
+      style="margin: 5px; padding: 8px 15px; background: #f44336; color: white; border: none; cursor: pointer;">Rechazar
+      no esenciales</button>
+    <button id="customizeCookies"
+      style="margin: 5px; padding: 8px 15px; background: #2196F3; color: white; border: none; cursor: pointer;">Personalizar</button>
+  </div>
+
+  <!-- Modal para personalización (opcional) -->
+  <div id="cookieSettings"
+    style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; color: black; padding: 20px; z-index: 10000; border: 1px solid #ccc;">
+    <h3>Configuración de Cookies</h3>
+    <label><input type="checkbox" id="technicalCookies" checked disabled> Cookies técnicas (necesarias)</label><br>
+    <label><input type="checkbox" id="analyticsCookies"> Cookies analíticas (Google Analytics)</label><br>
+    <button id="saveCookieSettings"
+      style="margin-top: 10px; padding: 8px 15px; background: #4CAF50; color: white; border: none; cursor: pointer;">Guardar</button>
+  </div>
+
+  <script>
+    // Funciones para crear y leer cookies
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+      let expires = "expires=" + d.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+    }
+
+    function getCookie(name) {
+      let cname = name + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
       }
-    });
-  });
-</script>
-<!-- Banner de Cookies 
-<div id="cookieConsent" style="position: fixed; bottom: 0; width: 100%; background: #222; color: white; padding: 15px; text-align: center; font-family: sans-serif; z-index: 9999;">
-  Usamos cookies para mejorar tu experiencia. 
-  <button id="acceptCookies" style="margin-left: 10px; padding: 5px 10px;">Aceptar</button>
-</div>
+      return "";
+    }
 
-<script>
-// Funciones para crear y leer cookies
-function setCookie(name, value, days) {
-  const d = new Date();
-  d.setTime(d.getTime() + (days*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
+    // Mostrar u ocultar banner dependiendo del consentimiento
+    window.onload = function () {
+      const consent = getCookie("cookieConsent");
+      if (consent === "accepted" || consent === "rejected" || consent === "custom") {
+        document.getElementById("cookieConsent").style.display = "none";
+        if (consent === "accepted" || (consent === "custom" && getCookie("analyticsConsent") === "true")) {
+          loadGoogleAnalytics();
+        }
+      } else {
+        document.getElementById("cookieConsent").style.display = "block";
+      }
 
-function getCookie(name) {
-  let cname = name + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i].trim();
-    if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
-  }
-  return "";
-}
+      // Aceptar todas las cookies
+      document.getElementById("acceptCookies").onclick = function () {
+        setCookie("cookieConsent", "accepted", 180); // 6 meses
+        setCookie("analyticsConsent", "true", 180);
+        document.getElementById("cookieConsent").style.display = "none";
+        loadGoogleAnalytics();
+      };
 
-// Mostrar u ocultar banner dependiendo si ya aceptó
-window.onload = function() {
-  if(getCookie("cookieConsent") === "accepted") {
-    document.getElementById("cookieConsent").style.display = "none";
-    loadGoogleAnalytics(); // Carga GA solo si ya aceptó
-  } else {
-    document.getElementById("cookieConsent").style.display = "block";
-  }
-  
-  document.getElementById("acceptCookies").onclick = function() {
-    setCookie("cookieConsent", "accepted", 365);
-    document.getElementById("cookieConsent").style.display = "none";
-    loadGoogleAnalytics(); // Carga GA cuando acepta
-  }
-};
+      // Rechazar cookies no esenciales
+      document.getElementById("rejectCookies").onclick = function () {
+        setCookie("cookieConsent", "rejected", 180);
+        setCookie("analyticsConsent", "false", 180);
+        document.getElementById("cookieConsent").style.display = "none";
+      };
 
-// Función para cargar Google Analytics dinámicamente
-function loadGoogleAnalytics() {
-  // Evitar cargar más de una vez
-  if(window.gaLoaded) return;
-  window.gaLoaded = true;
+      // Mostrar modal de personalización
+      document.getElementById("customizeCookies").onclick = function () {
+        document.getElementById("cookieSettings").style.display = "block";
+      };
 
-  // Añadimos el script GA (reemplaza con tu ID real)
-  const gaScript = document.createElement('script');
-  gaScript.async = true;
-  gaScript.src = "https://www.googletagmanager.com/gtag/js?id=TU_ID_DE_GA";
-  document.head.appendChild(gaScript);
+      // Guardar configuración personalizada
+      document.getElementById("saveCookieSettings").onclick = function () {
+        const analyticsConsent = document.getElementById("analyticsCookies").checked;
+        setCookie("cookieConsent", "custom", 180);
+        setCookie("analyticsConsent", analyticsConsent ? "true" : "false", 180);
+        document.getElementById("cookieConsent").style.display = "none";
+        document.getElementById("cookieSettings").style.display = "none";
+        if (analyticsConsent) loadGoogleAnalytics();
+      };
+    };
 
-  gaScript.onload = function() {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-27W7PCC1NC', { 'anonymize_ip': true }); // opcional para privacidad
-  };
-}
-</script>
--->
+    // Cargar Google Analytics dinámicamente
+    function loadGoogleAnalytics() {
+      if (window.gaLoaded) return;
+      window.gaLoaded = true;
+
+      const gaScript = document.createElement("script");
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-27W7PCC1NC";
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-27W7PCC1NC", { anonymize_ip: true });
+      };
+    }
+  </script>
 </body>
+
 </html>
