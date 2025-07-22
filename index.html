@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <title>TelcoGestión - Gestión de Antenas Móviles</title>
@@ -22,11 +23,11 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     rel="stylesheet"
   />
-
+  
   <style>
 
     header {
-      background: url("https://source.unsplash.com/1600x600/?antenna,technology") center/cover no-repeat;
+      background: url("assets/header-image.png.png") center/cover no-repeat;
       color: white;
       padding: 100px 0;
       text-align: center;
@@ -214,12 +215,22 @@
       display: inline-block;
     }
   </style>
+  <!-- Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-27W7PCC1NC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-27W7PCC1NC');
+</script> -->
+<!-- End Google Analytics -->
+
 </head>
 <body>
 
 <header data-aos="fade-down" data-aos-duration="1000">
-  <h1>TelcoGestión</h1>
-  <p>Optimización y Gestión de Contratos de Antenas Móviles</p>
+
   <a href="#contacto" class="btn btn-light">
     Consulta Gratis <i class="fas fa-arrow-right ms-2"></i>
   </a>
@@ -271,10 +282,9 @@
 
 <!-- INTEGRACIÓN DE NUEVO NOSOTROS -->
 <section id="nosotros" class="container" data-aos="fade-up" data-aos-duration="1000">
-  <h2 class="text-center display-5 fw-bold">Quiénes Somos</h2>
-  <p class="lead text-center">
-    TelcoGestión es una empresa líder en la gestión y optimización de contratos de antenas móviles. Con más de 10 años de experiencia, hemos ayudado a cientos de propietarios a maximizar sus ingresos y proteger sus derechos frente a las operadoras.
-  </p>
+  <h2 class="text-center display-5 fw-bold" style="font-weight: 900;">Quiénes Somos</h2>
+
+  <p class="lead text-center display-5 fw-bold" style="font-size: 1.3rem;">TelcoGestión es una empresa líder en la gestión y optimización de contratos de antenas móviles. Con más de 10 años de experiencia, hemos ayudado a cientos de propietarios a maximizar sus ingresos y proteger sus derechos frente a las operadoras.</p>
   <p class="text-center">
     Ubicados en Madrid, trabajamos a nivel nacional ofreciendo soluciones a medida para cada cliente.
   </p>
@@ -428,6 +438,102 @@
         </div>
       </div>
     </div>
+    <div class="accordion-item" role="listitem">
+      <h3 class="accordion-header" id="faqHeadingThree">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#faqCollapseThree"
+          aria-expanded="false"
+          aria-controls="faqCollapseThree"
+        >
+          ¿Qué coste tiene el servicio?
+        </button>
+      </h3>
+      <div
+        id="faqCollapseThree"
+        class="accordion-collapse collapse"
+        aria-labelledby="faqHeadingThree"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          El coste depende del tipo de servicio y la complejidad del caso. Ofrecemos una primera consulta gratuita y presupuesto personalizado.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" role="listitem">
+      <h3 class="accordion-header" id="faqHeadingFour">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#faqCollapseFour"
+          aria-expanded="false"
+          aria-controls="faqCollapseFour"
+        >
+          ¿Puedo renegociar mi contrato si ya está firmado?
+        </button>
+      </h3>
+      <div
+        id="faqCollapseFour"
+        class="accordion-collapse collapse"
+        aria-labelledby="faqHeadingFour"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          Sí, en muchos casos es posible renegociar condiciones o preparar la renovación para obtener mejores beneficios.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" role="listitem">
+      <h3 class="accordion-header" id="faqHeadingFive">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#faqCollapseFive"
+          aria-expanded="false"
+          aria-controls="faqCollapseFive"
+        >
+          ¿Trabajan solo en Madrid o en toda España?
+        </button>
+      </h3>
+      <div
+        id="faqCollapseFive"
+        class="accordion-collapse collapse"
+        aria-labelledby="faqHeadingFive"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          Ofrecemos nuestros servicios en toda España, tanto presencialmente como de forma online.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" role="listitem">
+      <h3 class="accordion-header" id="faqHeadingSix">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#faqCollapseSix"
+          aria-expanded="false"
+          aria-controls="faqCollapseSix"
+        >
+          ¿Qué tipo de propiedades pueden beneficiarse?
+        </button>
+      </h3>
+      <div
+        id="faqCollapseSix"
+        class="accordion-collapse collapse"
+        aria-labelledby="faqHeadingSix"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          Trabajamos con propietarios de edificios, comunidades, empresas y particulares que tengan contratos de antenas móviles.
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -551,5 +657,68 @@
     });
   });
 </script>
+<!-- Banner de Cookies 
+<div id="cookieConsent" style="position: fixed; bottom: 0; width: 100%; background: #222; color: white; padding: 15px; text-align: center; font-family: sans-serif; z-index: 9999;">
+  Usamos cookies para mejorar tu experiencia. 
+  <button id="acceptCookies" style="margin-left: 10px; padding: 5px 10px;">Aceptar</button>
+</div>
+
+<script>
+// Funciones para crear y leer cookies
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+  let cname = name + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
+  }
+  return "";
+}
+
+// Mostrar u ocultar banner dependiendo si ya aceptó
+window.onload = function() {
+  if(getCookie("cookieConsent") === "accepted") {
+    document.getElementById("cookieConsent").style.display = "none";
+    loadGoogleAnalytics(); // Carga GA solo si ya aceptó
+  } else {
+    document.getElementById("cookieConsent").style.display = "block";
+  }
+  
+  document.getElementById("acceptCookies").onclick = function() {
+    setCookie("cookieConsent", "accepted", 365);
+    document.getElementById("cookieConsent").style.display = "none";
+    loadGoogleAnalytics(); // Carga GA cuando acepta
+  }
+};
+
+// Función para cargar Google Analytics dinámicamente
+function loadGoogleAnalytics() {
+  // Evitar cargar más de una vez
+  if(window.gaLoaded) return;
+  window.gaLoaded = true;
+
+  // Añadimos el script GA (reemplaza con tu ID real)
+  const gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = "https://www.googletagmanager.com/gtag/js?id=TU_ID_DE_GA";
+  document.head.appendChild(gaScript);
+
+  gaScript.onload = function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-27W7PCC1NC', { 'anonymize_ip': true }); // opcional para privacidad
+  };
+}
+</script>
+-->
 </body>
 </html>
