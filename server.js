@@ -1,12 +1,11 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.post('/send', async (req, res) => {
   const { nombre, email, telefono, mensaje } = req.body; // <-- nombres igual que en el formulario

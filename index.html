@@ -632,16 +632,21 @@
 
   <script>
     const form = document.getElementById('contactForm');
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const formData = new FormData(form);
+      const data = {
+        nombre: form.nombre.value,
+        email: form.email.value,
+        telefono: form.telefono.value,
+        mensaje: form.mensaje.value
+      };
 
       try {
         const response = await fetch('https://telcogestion.onrender.com/send', {
           method: 'POST',
-          body: formData
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
         });
 
         if (response.ok) {
