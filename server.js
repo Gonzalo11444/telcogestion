@@ -48,3 +48,7 @@ Mensaje: ${message}
 app.listen(port, () => {
   console.log(`Servidor backend escuchando en http://localhost:${port}`);
 });
+
+app.get('/', (req, res) => {
+  res.send('Servidor backend de TelcoGestion funcionando.');
+});
