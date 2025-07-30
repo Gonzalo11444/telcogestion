@@ -8,7 +8,13 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+<!-- JS AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
   <!-- FontAwesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
@@ -16,6 +22,30 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
   <style>
+     #contacto {
+      background-color: #f8f9fa;
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #contacto h2 {
+      color: #007bff;
+      font-weight: 700;
+    }
+    #contacto button {
+      background-color: #007bff;
+      border: none;
+    }
+    #contacto button:hover {
+      background-color: #0056b3;
+    }
+        :root {
+      --primary-color: #000000;
+      --primary-hover: #084cdf;
+      --background-gradient: linear-gradient(135deg, #4a9af5 0%, #abf3e2 50%, #ffffff 100%);
+      --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
     header {
       background: url("assets/header-image.png.png") center/cover no-repeat;
       color: white;
@@ -25,33 +55,72 @@
       overflow: hidden;
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     }
+ /* Navbar */
+    nav.navbar {
+      background-color: rgba(255 255 255 / 0.95);
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: saturate(180%) blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+    }
+
+    nav.navbar.scrolled {
+      background-color: white;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--primary-color);
+    }
+
+    .navbar-nav .nav-link {
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: var(--primary-hover);
+    }
+
+    /* Header Hero */
 
     header h1 {
       font-weight: 900;
-      font-size: 4rem;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     }
 
     header p {
-      font-size: 1.5rem;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
       font-weight: 600;
+      max-width: 720px;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     }
 
     header .btn {
-      margin-top: 20px;
       font-size: 1.25rem;
-      padding: 12px 30px;
-      font-weight: 600;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(255 255 255 / 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    header .btn:hover {
-      background-color: #084cdf;
+    header .btn:hover,
+    header .btn:focus {
+      background-color: #063ec9;
+      box-shadow: 0 8px 32px rgba(255 255 255 / 0.5);
       color: white;
-      box-shadow: 0 8px 20px rgba(13, 110, 253, 0.7);
+      outline: none;
     }
-
     section {
       padding: 60px 20px;
     }
@@ -223,6 +292,7 @@
     }
   </style>
 
+    
 </head>
 
 <body>
@@ -474,24 +544,71 @@
     </div>
   </section>
   
-<section id="contacto" class="container my-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+  <!-- Contacto -->
+<section id="contacto" class="container my-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
   <h2 class="text-center mb-4">Contacto</h2>
-  <form id="contactForm" class="mx-auto" style="max-width: 500px;" aria-label="Formulario de contacto">
+  
+  <form id="contactForm" action="https://telcogestion.onrender.com/send" method="POST">
     <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombre" name="name" placeholder="Tu nombre" required />
+      <label for="nombre" class="form-label">Nombre completo</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" required />
     </div>
     <div class="mb-3">
-      <label for="email" class="form-label">Correo Electrónico</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required />
+      <label for="email" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="email" name="email" required />
     </div>
     <div class="mb-3">
       <label for="mensaje" class="form-label">Mensaje</label>
-      <textarea class="form-control" id="mensaje" name="message" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+      <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    <button type="submit" class="btn btn-primary">Enviar consulta</button>
   </form>
+  
+  <div id="resultado" class="mt-3"></div>
 </section>
+
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    © 2025 TelcoGestión. Todos los derechos reservados.
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: "ease-in-out",
+    });
+
+    // Navbar background on scroll
+    const navbar = document.querySelector("nav.navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Bootstrap form validation example
+    (() => {
+      'use strict'
+      const form = document.querySelector('#form-contacto')
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })()
+  </script>
 
 <script>
   const form = document.getElementById('contactForm');

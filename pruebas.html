@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>TelcoGestión - Gestión de Antenas Móviles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --primary-hover: #084cdf;
+      --background-gradient: linear-gradient(135deg, #4a9af5 0%, #abf3e2 50%, #ffffff 100%);
+      --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--background-gradient);
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    nav.navbar {
+      background-color: rgba(255 255 255 / 0.95);
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: saturate(180%) blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+    }
+
+    nav.navbar.scrolled {
+      background-color: white;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--primary-color);
+    }
+
+    .navbar-nav .nav-link {
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: var(--primary-hover);
+    }
+
+    /* Header Hero */
+    header {
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: var(--primary-color);
+      background-image: radial-gradient(circle at center, #084cdf 30%, #0d6efd 90%);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header p {
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      font-weight: 600;
+      max-width: 720px;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header .btn {
+      font-size: 1.25rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(255 255 255 / 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    header .btn:hover,
+    header .btn:focus {
+      background-color: #063ec9;
+      box-shadow: 0 8px 32px rgba(255 255 255 / 0.5);
+      color: white;
+      outline: none;
+    }
+
+    /* Section Titles */
+    section h2 {
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #222;
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Nosotros */
+    #nosotros p.lead {
+      font-size: 1.2rem;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    #nosotros p.text-center {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    #nosotros .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 30px;
+      box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #nosotros .btn-primary:hover {
+      background-color: var(--primary-hover);
+      box-shadow: 0 8px 20px rgba(13, 110, 253, 0.5);
+    }
+
+    #nosotros .d-flex img {
+      border-radius: 0.75rem;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+      max-width: 300px;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    /* Servicios - icon-box */
+    #servicios .icon-box {
+      background-color: white;
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.07);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #servicios .icon-box i {
+      font-size: 3.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1.25rem;
+      transition: color 0.3s ease;
+    }
+
+    #servicios .icon-box:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 16px 40px rgba(13, 110, 253, 0.25);
+    }
+
+    #servicios .icon-box:hover i {
+      color: var(--primary-hover);
+    }
+
+    #servicios .icon-box h5 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    /* Beneficios */
+    #beneficios ul.list-group {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #beneficios ul.list-group-item {
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background-color: rgba(255 255 255 / 0.9);
+      color: #444;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    #beneficios ul.list-group-item i {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+
+    /* Testimonios */
+    #testimonios {
+      background: white;
+      padding: 4rem 1rem;
+      border-radius: 30px;
+      max-width: 900px;
+      margin: 3rem auto;
+      box-shadow: 0 16px 40px rgb(0 0 0 / 0.1);
+      position: relative;
+    }
+
+    #testimonios .carousel-item {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    #testimonios .carousel-item p {
+      font-size: 1.15rem;
+      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    #testimonios .carousel-item .author {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary-color);
+    }
+
+    /* FAQ */
+    #faq .accordion-button {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--primary-color);
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgb(13 110 253 / 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    #faq .accordion-button:not(.collapsed) {
+      color: white;
+      background-color: var(--primary-color);
+      box-shadow: 0 8px 20px rgb(13 110 253 / 0.3);
+    }
+
+    #faq .accordion-body {
+      background-color: white;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    /* Formulario */
+    #contacto {
+      background-color: #e9f0ff;
+      padding: 3rem 1rem;
+      border-radius: 25px;
+      max-width: 700px;
+      margin: 3rem auto;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    #contacto h3 {
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      color: var(--primary-color);
+      text-align: center;
+    }
+
+    #contacto .form-control {
+      border-radius: 12px;
+      border: 1.8px solid var(--primary-color);
+      padding: 0.8rem 1rem;
+      font-size: 1.1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    #contacto .form-control:focus {
+      border-color: var(--primary-hover);
+      box-shadow: 0 0 8px var(--primary-hover);
+      outline: none;
+    }
+
+    #contacto button.btn {
+      width: 100%;
+      font-weight: 700;
+      padding: 12px 0;
+      font-size: 1.25rem;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    #contacto button.btn:hover,
+    #contacto button.btn:focus {
+      background-color: var(--primary-hover);
+      box-shadow: 0 8px 32px rgba(13, 76, 255, 0.6);
+      outline: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0d6efd;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 3rem;
+    }
+
+    /* Responsive tweaks */
+    @media (min-width: 992px) {
+      #nosotros .d-flex {
+        gap: 3rem;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">TelcoGestión</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto gap-3">
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-primary text-white px-4" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Hero -->
+  <header role="banner" aria-label="Introducción a TelcoGestión">
+    <h1 data-aos="fade-down" data-aos-delay="100">Gestión Integral de Antenas de Telefonía Móvil</h1>
+    <p data-aos="fade-up" data-aos-delay="300">
+      TelcoGestión ofrece un servicio completo y especializado en la gestión técnica y legal para antenas de telefonía,
+      garantizando calidad, rapidez y confianza.
+    </p>
+    <a href="#contacto" class="btn btn-light" data-aos="zoom-in" data-aos-delay="500" role="button">Solicita tu asesoría</a>
+  </header>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="py-5" role="region" aria-labelledby="nosotrosTitle">
+    <div class="container">
+      <h2 id="nosotrosTitle" data-aos="fade-up">Nosotros</h2>
+      <div class="d-flex flex-column flex-lg-row align-items-center gap-4">
+        <p class="lead flex-fill" data-aos="fade-right" data-aos-delay="100">
+          Somos una empresa con más de 10 años de experiencia en el sector de antenas de telefonía móvil. Nuestro
+          equipo está formado por técnicos e ingenieros altamente cualificados que te acompañan desde la planificación
+          hasta la puesta en marcha.
+        </p>
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+          alt="Equipo técnico trabajando en antena de telefonía móvil" loading="lazy" data-aos="fade-left" data-aos-delay="200" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-5 bg-light" role="region" aria-labelledby="serviciosTitle">
+    <div class="container">
+      <h2 id="serviciosTitle" data-aos="fade-up">Nuestros Servicios</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon-box">
+            <i class="fa-solid fa-building-shield"></i>
+            <h5>Trámites y Licencias</h5>
+            <p>Gestionamos toda la documentación legal necesaria para la instalación y funcionamiento de antenas.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-box">
+            <i class="fa-solid fa-wrench"></i>
+            <h5>Mantenimiento Técnico</h5>
+            <p>Realizamos inspecciones y mantenimiento para asegurar el correcto estado y funcionamiento.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon-box">
+            <i class="fa-solid fa-chart-line"></i>
+            <h5>Consultoría y Asesoría</h5>
+            <p>Asesoramos en la optimización y desarrollo de proyectos relacionados con infraestructuras móviles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section id="beneficios" class="py-5" role="region" aria-labelledby="beneficiosTitle">
+    <div class="container">
+      <h2 id="beneficiosTitle" data-aos="fade-up">Beneficios de Trabajar con Nosotros</h2>
+      <ul class="list-group list-group-flush" data-aos="fade-up" data-aos-delay="200" role="list">
+        <li class="list-group-item"><i class="fa-solid fa-check-circle"></i> Servicio personalizado y flexible</li>
+        <li class="list-group-item"><i class="fa-solid fa-check-circle"></i> Respuesta rápida y soporte 24/7</li>
+        <li class="list-group-item"><i class="fa-solid fa-check-circle"></i> Equipo con alta experiencia técnica</li>
+        <li class="list-group-item"><i class="fa-solid fa-check-circle"></i> Cumplimiento estricto de normativas vigentes</li>
+        <li class="list-group-item"><i class="fa-solid fa-check-circle"></i> Optimización de costes y recursos</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" role="region" aria-labelledby="testimoniosTitle">
+    <div class="container">
+      <h2 id="testimoniosTitle" data-aos="fade-up" class="mb-4">Lo que dicen nuestros clientes</h2>
+      <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up" data-aos-delay="300" aria-label="Carrusel de testimonios">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <p>"La gestión de TelcoGestión fue rápida y efectiva, siempre atentos a nuestras necesidades."</p>
+            <div class="author">— Laura Martínez</div>
+          </div>
+          <div class="carousel-item">
+            <p>"Profesionales de confianza. Nos ayudaron a obtener las licencias sin problemas."</p>
+            <div class="author">— Carlos Ruiz</div>
+          </div>
+          <div class="carousel-item">
+            <p>"Su asesoría técnica mejoró notablemente el rendimiento de nuestras antenas."</p>
+            <div class="author">— Marta Gómez</div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev" aria-label="Anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next" aria-label="Siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5 bg-light" role="region" aria-labelledby="faqTitle">
+    <div class="container">
+      <h2 id="faqTitle" data-aos="fade-up">Preguntas Frecuentes</h2>
+      <div class="accordion" id="faqAccordion" data-aos="fade-up" data-aos-delay="200">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1"
+              aria-expanded="false" aria-controls="faqCollapse1">
+              ¿Cuánto tiempo tarda el proceso de licencia?
+            </button>
+          </h3>
+          <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              El proceso suele tardar entre 1 y 3 meses, dependiendo de la ubicación y los permisos requeridos.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeading2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2"
+              aria-expanded="false" aria-controls="faqCollapse2">
+              ¿Ofrecen mantenimiento preventivo?
+            </button>
+          </h3>
+          <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sí, realizamos inspecciones periódicas para garantizar el óptimo funcionamiento y seguridad.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="faqHeading3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3"
+              aria-expanded="false" aria-controls="faqCollapse3">
+              ¿Trabajan con todas las operadoras de telefonía?
+            </button>
+          </h3>
+          <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sí, tenemos experiencia con las principales operadoras y proyectos a medida.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" role="region" aria-labelledby="contactoTitle">
+    <div class="container">
+      <h3 id="contactoTitle">Contacta con Nosotros</h3>
+      <form id="form-contacto" novalidate>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required aria-required="true" />
+          <div class="invalid-feedback">Por favor, introduce tu nombre.</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required aria-required="true" />
+          <div class="invalid-feedback">Introduce un correo válido.</div>
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="(opcional)" />
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu consulta" required aria-required="true"></textarea>
+          <div class="invalid-feedback">Escribe un mensaje.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar consulta</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    © 2025 TelcoGestión. Todos los derechos reservados.
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: "ease-in-out",
+    });
+
+    // Navbar background on scroll
+    const navbar = document.querySelector("nav.navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Bootstrap form validation example
+    (() => {
+      'use strict'
+      const form = document.querySelector('#form-contacto')
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })()
+  </script>
+
+</body>
+
+</html>
