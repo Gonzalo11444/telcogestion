@@ -30,9 +30,10 @@ app.post('/send', async (req, res) => {
       to: 'info@telcogestion.es',
       subject: 'Nuevo mensaje desde el formulario',
       text: `
-Nombre: ${name}
+Nombre: ${nombre}
 Email: ${email}
-Mensaje: ${message}
+Teléfono: ${telefono}
+Mensaje: ${mensaje}
       `,
     });
 
