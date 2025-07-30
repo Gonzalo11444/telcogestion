@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/send', async (req, res) => {
-  const { name, email, message } = req.body;
+  const { nombre, email, telefono, mensaje } = req.body; // <-- nombres igual que en el formulario
 
   const transporter = nodemailer.createTransport({
     host: 'authsmtp.securemail.pro',
