@@ -27,32 +27,47 @@
     }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 900px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 50px 40px;
+      max-width: 960px;
       width: 100%;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(14px);
       color: #fff;
     }
 
     .glass-card h1 {
       font-size: 2.8rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .glass-card section {
+      margin-bottom: 25px;
+    }
+
+    .glass-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #ffd700;
     }
 
     .glass-card p {
       font-size: 1.1rem;
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
     .btn-custom {
       background-color: #0d6efd;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-weight: bold;
-      margin-top: 30px;
+      margin: 15px 10px 0 10px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
     }
 
     .btn-custom:hover {
@@ -61,7 +76,10 @@
 
     @media (max-width: 768px) {
       .glass-card {
-        padding: 20px;
+        padding: 25px;
+      }
+      .glass-card h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -71,13 +89,31 @@
 <div class="overlay">
   <div class="glass-card text-center">
     <h1>¿Quiénes Somos?</h1>
-    <p>TelcoGestión es una firma de consultoría especializada en la optimización de contratos de antenas móviles. Nuestro equipo, compuesto por ingenieros, expertos legales y gestores inmobiliarios, ha ayudado a más de 300 propietarios a mejorar sus condiciones económicas frente a grandes operadoras.</p>
-    
-    <p>Nuestro compromiso es claro: defender tus intereses, maximizar tus ingresos y acompañarte en cada fase del proceso con transparencia, cercanía y eficacia.</p>
 
-    <p>Con sede en Madrid y actuación nacional, ofrecemos soluciones personalizadas adaptadas a cada caso, ya seas una comunidad de vecinos, un particular o una empresa.</p>
+    <section>
+      <h2><i class="fas fa-bullseye"></i> Nuestra Misión</h2>
+      <p>Empoderar a propietarios, comunidades y empresas para que obtengan las mejores condiciones posibles en sus contratos de antenas móviles, ofreciendo un servicio legal, técnico y humano de primer nivel.</p>
+    </section>
 
-    <a href="index.html" class="btn btn-custom">Volver a la Página Principal</a>
+    <section>
+      <h2><i class="fas fa-eye"></i> Nuestra Visión</h2>
+      <p>Convertirnos en la consultora de referencia en España para la gestión de contratos con operadoras móviles, destacando por nuestra transparencia, resultados y cercanía.</p>
+    </section>
+
+    <section>
+      <h2><i class="fas fa-users"></i> Nuestro Equipo</h2>
+      <p>Formado por profesionales multidisciplinares: ingenieros de telecomunicaciones, abogados expertos en arrendamientos urbanos y especialistas en negociación con grandes operadoras.</p>
+    </section>
+
+    <section>
+      <h2><i class="fas fa-handshake"></i> Nuestros Valores</h2>
+      <p>Compromiso, integridad, resultados y cercanía. Trabajamos contigo, no solo para ti.</p>
+    </section>
+
+    <div>
+      <a href="index.html" class="btn btn-custom">Volver al Inicio</a>
+      <a href="mailto:info@telcogestion.es" class="btn btn-custom">Contactar</a>
+    </div>
   </div>
 </div>
 

@@ -20,316 +20,13 @@
 
   <!-- AOS (Animate on Scroll) CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-
-  <style>
-    /* Formulario */
-    #contacto {
-      background-color: #e9f0ff;
-      padding: 3rem 1rem;
-      border-radius: 25px;
-      max-width: 700px;
-      margin: 3rem auto;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    #contacto h3 {
-      font-weight: 700;
-      margin-bottom: 1.75rem;
-      color: var(--primary-color);
-      text-align: center;
-    }
-
-    #contacto .form-control {
-      border-radius: 12px;
-      border: 1.8px solid var(--primary-color);
-      padding: 0.8rem 1rem;
-      font-size: 1.1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    #contacto .form-control:focus {
-      border-color: var(--primary-hover);
-      box-shadow: 0 0 8px var(--primary-hover);
-      outline: none;
-    }
-
-    #contacto button.btn {
-      width: 100%;
-      font-weight: 700;
-      padding: 12px 0;
-      font-size: 1.25rem;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
-    }
-
-    #contacto button.btn:hover,
-    #contacto button.btn:focus {
-      background-color: var(--primary-hover);
-      box-shadow: 0 8px 32px rgba(13, 76, 255, 0.6);
-      outline: none;
-    }
-
-    :root {
-      --primary-color: #000000;
-      --primary-hover: #084cdf;
-      --background-gradient: linear-gradient(135deg, #4a9af5 0%, #abf3e2 50%, #ffffff 100%);
-      --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    header {
-      background: url("assets/header-image.png.png") center/cover no-repeat;
-      color: white;
-      padding: 100px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    }
-
-    /* Navbar */
-    nav.navbar {
-      background-color: rgba(255 255 255 / 0.95);
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      backdrop-filter: saturate(180%) blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 1030;
-    }
-
-    nav.navbar.scrolled {
-      background-color: white;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: var(--primary-color);
-    }
-
-    .navbar-nav .nav-link {
-      color: #333;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link:focus {
-      color: var(--primary-hover);
-    }
-
-    /* Header Hero */
-
-    header h1 {
-      font-weight: 900;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    }
-
-    header p {
-      font-size: clamp(1.1rem, 2vw, 1.6rem);
-      font-weight: 600;
-      max-width: 720px;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-    }
-
-    header .btn {
-      font-size: 1.25rem;
-      padding: 14px 32px;
-      border-radius: 50px;
-      font-weight: 700;
-      box-shadow: 0 6px 20px rgba(255 255 255 / 0.3);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    header .btn:hover,
-    header .btn:focus {
-      background-color: #063ec9;
-      box-shadow: 0 8px 32px rgba(255 255 255 / 0.5);
-      color: white;
-      outline: none;
-    }
-
-    section {
-      padding: 60px 20px;
-    }
-
-    /* Icon boxes: con icono + texto */
-    .icon-box {
-      text-align: center;
-      padding: 25px 20px;
-      border-radius: 15px;
-      background: rgba(255 255 255 / 0.9);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      margin-bottom: 30px;
-      cursor: pointer;
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .icon-box i {
-      font-size: 48px;
-      color: #0d6efd;
-      margin-bottom: 15px;
-      transition: color 0.3s ease;
-    }
-
-    .icon-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(13, 110, 253, 0.3);
-    }
-
-    .icon-box:hover i {
-      color: #084cdf;
-    }
-
-    /* Carrusel opiniones centrado */
-    #testimonios {
-      background: linear-gradient(135deg, #d9e8ff, #f5faff);
-      padding: 80px 20px;
-      color: #333;
-    }
-
-    #testimonios h2 {
-      margin-bottom: 40px;
-      font-weight: 700;
-    }
-
-    .carousel-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      font-style: italic;
-      font-size: 1.25rem;
-      color: #444;
-    }
-
-    .carousel-item .testimonial-author {
-      margin-top: 15px;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #0d6efd;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
-      width: 2.5rem;
-      height: 2.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(13, 110, 253, 0.8);
-      /* azul Bootstrap, no blanco */
-      border-radius: 50%;
-      opacity: 1;
-      border: none;
-      color: #fff;
-    }
-
-    .carousel-control-prev {
-      left: 10px;
-    }
-
-    .carousel-control-next {
-      right: 10px;
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-image: none;
-      color: #fff;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-    }
-
-    .carousel-control-prev-icon:after {
-      content: '\f053';
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-    }
-
-    .carousel-control-next-icon:after {
-      content: '\f054';
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-    }
-
-
-    .carousel-indicators {
-      justify-content: center;
-      margin-top: 30px;
-      gap: 10px;
-    }
-
-    /* Otros estilos */
-    footer {
-      background: #f8f9fa;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      border-top: 1px solid #ddd;
-    }
-
-    /* --- INTEGRACIÓN DE ESTILOS NUEVOS --- */
-    body {
-      font-family: "Segoe UI", sans-serif;
-      scroll-behavior: smooth;
-      min-height: 100vh;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #4a9af5 0%, #abf3e2 50%, #ffffff 100%);
-    }
-
-    .icon-box {
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 12px;
-      margin: 15px 0;
-      transition: transform 0.3s;
-      box-shadow: none;
-      min-height: unset;
-      padding: 20px;
-      display: block;
-    }
-
-    .icon-box:hover {
-      transform: scale(1.05);
-      box-shadow: none;
-    }
-
-    .icon-box i {
-      font-size: 40px;
-      color: #0d6efd;
-      margin-bottom: 10px;
-    }
-
-    .transparent-carousel .carousel-item {
-      background-color: transparent !important;
-    }
-
-    .transparent-carousel blockquote {
-      background-color: rgba(255, 255, 255, 0.6);
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-    }
-  </style>
-
-
+  <!-- STYLE CSS -->
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header data-aos="fade-down" data-aos-duration="1000" style="padding-top: 50px; text-align: center;">
+  <header class="hero"data-aos="fade-down" data-aos-duration="1000" style="padding-top: 50px; text-align: center;">
     <a href="#contacto" class="btn btn-light" style="margin-top: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
       Consulta Gratis <i class="fas fa-arrow-right ms-2"></i>
     </a>
@@ -371,19 +68,19 @@
 
   <!-- INTEGRACIÓN DE NUEVO NOSOTROS -->
   <section id="nosotros" class="container" data-aos="fade-up" data-aos-duration="1000">
-    <h2 class="text-center display-5 fw-bold" style="font-size: 5.2rem;">Quiénes Somos</h2>
+   
+<header class="hero-header">
+  <div class="hero-content text-center">
+    <h1 class="display-4 fw-bold">Bienvenidos a TelcoGestión</h1>
+    <p class="lead">Consultoría especializada en telecomunicaciones y soluciones personalizadas para tu empresa.</p>
+    <a href="quienes-somos.html" class="btn btn-light mt-3">Conócenos más</a>
+  </div>
+</header>
 
-    <p class="lead text-center display-5 fw-bold" style="font-size: 1.3rem;">TelcoGestión es una empresa líder en la
-      gestión y optimización de contratos de antenas móviles. Con más de 10 años de experiencia, hemos ayudado a cientos
-      de propietarios a maximizar sus ingresos y proteger sus derechos frente a las operadoras.</p>
-    <p class="text-center">
-      Ubicados en Madrid, trabajamos a nivel nacional ofreciendo soluciones a medida para cada cliente.
-    </p>
-    <div class="text-center mt-4">
-      <a href="quienes-somos.html" class="btn btn-primary">Leer más sobre nosotros</a>
-    </div>
+
     <!-- Manteniendo imágenes originales debajo -->
     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" aria-label="Imágenes sobre gestión y tecnología">
+      
       <img
         src="https://blogthinkbig.com/wp-content/uploads/sites/4/2019/12/technology-cable-electricity-energy-electronic-device-electrical-supply-104676-pxhere.com_-e1577344842465.jpg?fit=1800%2C700"
         alt="Tecnología de telecomunicaciones" loading="lazy" class="rounded shadow"
@@ -395,9 +92,39 @@
         alt="Firma de contratos" loading="lazy" class="rounded shadow" style="max-width: 300px;max-height: 300px;" />
     </div>
   </section>
+<section class="section bg-light text-center">
+  <div class="container">
+    <h2 class="mb-4">¿Por qué elegir TelcoGestión?</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-tower-broadcast"></i>
+          <h4>Experiencia Técnica</h4>
+          <p>Más de 10 años ayudando a empresas a optimizar sus infraestructuras de telecomunicaciones.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-user-shield"></i>
+          <h4>Seguridad y Confianza</h4>
+          <p>Garantizamos privacidad, cumplimiento legal y fiabilidad en todas nuestras soluciones.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box">
+          <i class="fas fa-handshake-angle"></i>
+          <h4>Atención Personalizada</h4>
+          <p>Nos adaptamos a las necesidades de cada cliente, con seguimiento cercano y constante.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
 
   <!-- INTEGRACIÓN DE NUEVO SERVICIOS -->
-  <section id="servicios" class="bg-light" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+  <section id="servicios" class="bg-light" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
     <div class="container">
       <h2 class="text-center mb-5">Nuestros Servicios</h2>
       <div class="row justify-content-center">
