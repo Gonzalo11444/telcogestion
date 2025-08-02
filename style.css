@@ -57,7 +57,7 @@
 }
 
 header.hero {
-  background: url("assets/header-image.png.png") center/cover no-repeat;
+  background: url("assets/header-image.png") center/cover no-repeat;
   color: white;
   padding: 100px 0;
   text-align: center;
