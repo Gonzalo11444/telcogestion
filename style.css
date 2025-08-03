@@ -344,3 +344,228 @@ body {
   border-radius: 10px;
   display: inline-block;
 }
+
+.terreno-seccion {
+  background: linear-gradient(135deg, #d9e8ff, #f5faff);
+  padding: 2rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(13, 76, 255, 0.15);
+  max-width: 1020px;
+  margin: 3rem auto;
+
+  display: flex;
+  flex-wrap: nowrap;
+  /* evitar que se envuelva */
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.terreno-textos {
+  flex: 0 0 45%;
+  /* ocupa 45% del ancho */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.terreno-fotos {
+  flex: 0 0 45%;
+  /* ocupa 45% del ancho */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.terreno-fotos img {
+  width: 100%;
+  /* para que las imágenes usen el ancho completo del contenedor */
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(13, 76, 255, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.terreno-fotos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(13, 76, 255, 0.5);
+}
+
+.terreno-textos p.fw-bold.fs-4 {
+  color: #084cdf;
+  margin-bottom: 0.5rem;
+}
+
+.terreno-textos p.fs-5 {
+  color: #333;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .terreno-seccion {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .terreno-textos,
+  .terreno-fotos {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+.contenedor-antenas {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background-color: #e9f0ff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(13, 76, 255, 0.15);
+  flex-wrap: wrap;
+  /* para que en pantallas pequeñas se adapte */
+}
+
+.lado-izquierdo,
+.lado-derecho {
+  flex: 1 1 300px;
+  /* ancho mínimo 300px, crece si hay espacio */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.imagenes.fila {
+  display: flex;
+  gap: 1rem;
+}
+
+.imagenes.fila img,
+.lado-derecho>img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(13, 76, 255, 0.25);
+  object-fit: cover;
+}
+
+.fw-bold.fs-4 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+  color: var(--primary-hover, #084cdf);
+}
+
+.fs-5 {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Responsive: en móviles apilamos verticalmente */
+@media (max-width: 768px) {
+  .contenedor-antenas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lado-izquierdo,
+  .lado-derecho {
+    flex-basis: 100%;
+  }
+
+  .imagenes.fila {
+    justify-content: center;
+  }
+
+  .imagenes.fila img,
+  .lado-derecho>img {
+    max-width: 45vw;
+  }
+}
+
+.contenedor-antenas {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background-color: #e9f0ff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(13, 76, 255, 0.15);
+  flex-wrap: wrap;
+  align-items: flex-start;
+  /* que no se solapen verticalmente */
+}
+
+.lado-izquierdo,
+.lado-derecho {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.imagenes.fila {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  /* no dejar que se apilen */
+}
+
+.imagenes.fila img {
+  width: 45%;
+  /* menos ancho para que no quede muy grande */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(13, 76, 255, 0.25);
+  object-fit: cover;
+}
+
+.lado-derecho>img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(13, 76, 255, 0.25);
+  object-fit: cover;
+  align-self: flex-start;
+  /* para evitar superposición */
+}
+
+.fw-bold.fs-4 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+  color: var(--primary-hover, #084cdf);
+}
+
+.fs-5 {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Responsive: en móviles apilamos verticalmente */
+@media (max-width: 768px) {
+  .contenedor-antenas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lado-izquierdo,
+  .lado-derecho {
+    flex-basis: 100%;
+  }
+
+  .imagenes.fila {
+    justify-content: center;
+  }
+
+  .imagenes.fila img,
+  .lado-derecho>img {
+    max-width: 45vw;
+    width: auto;
+  }
+}
