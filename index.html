@@ -242,9 +242,9 @@
     <div class="accordion" id="faqAccordion" role="list">
       <div class="accordion-item" role="listitem">
         <h3 class="accordion-header" id="faqHeadingOne">
-          <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne"
-            onclick="this.classList.toggle('collapsed');">
+          <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne"
+            onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true')">
             ¿Cómo funciona la optimización de contratos?
           </button>
         </h3>
@@ -373,18 +373,9 @@
       once: true,
       easing: "ease-in-out",
     });
-    // Ensure navbar toggles properly
-    const navbar = document.querySelectorAll('.navbar-toggler').forEach(button => {
-      button.addEventListener('click', () => {
-        const target = document.querySelector(button.getAttribute('data-bs-target'));
-        if (target) {
-          target.classList.toggle('show');
-        }
-      });
-    });
     // Navbar background on scroll
-    document.querySelector("nav.navbar");
     window.addEventListener("scroll", () => {
+      const navbar = document.querySelector("nav.navbar");
       if (window.scrollY > 20) {
         navbar.classList.add("scrolled");
       } else {
