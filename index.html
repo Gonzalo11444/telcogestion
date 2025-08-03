@@ -240,7 +240,7 @@
   <section id="faq" class="container my-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
     <h2 class="text-center mb-5">Preguntas Frecuentes</h2>
     <div class="accordion" id="faqAccordion" role="list">
-      <div class="accordion-item" role="listitem">
+      <div class="accordion-item">
         <h3 class="accordion-header" id="faqHeadingOne">
           <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
             data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne"
@@ -255,7 +255,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item" role="listitem">
+      <div class="accordion-item">
         <h3 class="accordion-header" id="faqHeadingTwo">
           <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
@@ -269,7 +269,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item" role="listitem">
+      <div class="accordion-item">
         <h3 class="accordion-header" id="faqHeadingThree">
           <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
@@ -284,7 +284,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item" role="listitem">
+      <div class="accordion-item">
         <h3 class="accordion-header" id="faqHeadingFour">
           <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
             data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
@@ -299,7 +299,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item" role="listitem">
+      <div class="accordion-item">
         <h3 class="accordion-header" id="faqHeadingFive">
           <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
             data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
@@ -313,7 +313,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item" role="listitem">
+      <div class="accordion-item">
         <h3 class="accordion-header" id="faqHeadingSix">
           <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
             data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
@@ -367,23 +367,6 @@
   <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-  <script>
-    AOS.init({
-      duration: 900,
-      once: true,
-      easing: "ease-in-out",
-    });
-    // Navbar background on scroll
-    window.addEventListener("scroll", () => {
-      const navbar = document.querySelector("nav.navbar");
-      if (window.scrollY > 20) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-
-  </script>
 
   <script>
     const form = document.getElementById('contactForm');
