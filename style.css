@@ -646,16 +646,13 @@ body {
     align-items: center;
   }
 
-  .imagenes.fila img {
-    width: 80%;
-    max-width: 300px;
-  }
-
+  .imagenes.fila img,
   .lado-derecho>img {
-    width: 80%;
-    max-width: 300px;
+    width: 90%;
+    max-width: 320px;
   }
 }
+
 
 /* 1. Animaciones generales */
 @keyframes fadeInUp {
@@ -693,19 +690,16 @@ body {
   animation-delay: 0.8s;
 }
 
-/* 2. Efecto hover en imágenes */
+/* Efecto hover en imágenes */
 .contenedor-antenas img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contenedor-antenas img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(13, 76, 255, 0.35);
-}
-
-/* 3. Efecto glow de borde en hover */
+/* Solo aplicar el zoom y borde en pantallas grandes */
 @media (hover: hover) {
   .contenedor-antenas img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(13, 76, 255, 0.35);
     outline: 2px solid #084cdf;
     outline-offset: 4px;
     border-radius: 14px;
