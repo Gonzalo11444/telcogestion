@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://telcogestion.es/sitemap.xml

@@ -19,5 +19,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://www.telcogestion.es/quienes-somos.html</loc>
+    <lastmod>2025-08-03</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>
 ```
