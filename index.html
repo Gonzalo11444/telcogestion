@@ -452,7 +452,7 @@
         });
 
         const json = await res.json();
-        if (res.ok && json.ok) {
+        if (res.ok && json.success) {
           document.getElementById('resultado').textContent = 'Mensaje enviado. Gracias.';
           form.reset();
         } else {
