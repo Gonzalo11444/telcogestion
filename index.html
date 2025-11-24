@@ -429,7 +429,7 @@
   <div id="resultado" class="mt-3"></div>
 </section>
 // ...existing code...
-
+// ...existing code...
 <script>
   (function(){
     const form = document.getElementById('contactForm');
@@ -444,22 +444,40 @@
         mensaje: document.getElementById('mensaje').value.trim()
       };
 
+      console.log('Enviando datos:', data); // DEBUG
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 seg
+
       try {
+        console.log('Iniciando fetch a /send...'); // DEBUG
         const res = await fetch('https://telcogestion.onrender.com/send', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+          body: JSON.stringify(data),
+          signal: controller.signal
         });
 
+        clearTimeout(timeoutId);
+        console.log('Respuesta recibida:', res.status); // DEBUG
+        
         const json = await res.json();
+        console.log('JSON:', json); // DEBUG
+        
         if (res.ok && json.success) {
           document.getElementById('resultado').textContent = 'Mensaje enviado. Gracias.';
           form.reset();
         } else {
-          alert('Error de conexión con el servidor.');
+          alert('Error del servidor: ' + (json.error || 'desconocido'));
         }
       } catch (err) {
-        alert('Error de conexión con el servidor.');
+        clearTimeout(timeoutId);
+        console.error('Error completo:', err); // DEBUG
+        if (err.name === 'AbortError') {
+          alert('Timeout: el servidor tardó demasiado.');
+        } else {
+          alert('Error: ' + (err.message || err));
+        }
       }
     });
   })();
