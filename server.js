@@ -12,7 +12,7 @@ app.post('/send', async (req, res) => {
 
   const transporter = nodemailer.createTransport({
     host: 'authsmtp.securemail.pro',
-    port: 465,
+    port: 587,
     secure: true, // Usamos SSL/TLS
     auth: {
       user: 'info@telcogestion.es',
