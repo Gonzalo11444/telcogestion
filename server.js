@@ -11,12 +11,12 @@ app.post('/send', async (req, res) => {
   const { nombre, email, telefono, mensaje } = req.body; // <-- nombres igual que en el formulario
 
   const transporter = nodemailer.createTransport({
-    host: 'authsmtp.securemail.pro',
+    host: 'smtppro.zoho.eu',
     port: 465,
     secure: true, // Usamos SSL/TLS
     auth: {
       user: 'info@telcogestion.es',
-      pass: 'infotelcogestion!',
+      pass: 'Ladoscuro!',
     },
     tls: {
       rejectUnauthorized: false  // <--- Evita error self-signed certificate
