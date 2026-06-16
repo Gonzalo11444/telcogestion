@@ -16,7 +16,7 @@ app.post('/send', async (req, res) => {
     secure: true, // Usamos SSL/TLS
     auth: {
       user: 'info@telcogestion.es',
-      pass: 'Ladoscuro!',
+      pass: 'process.env.EMAIL_PASS',
     },
     tls: {
       rejectUnauthorized: false  // <--- Evita error self-signed certificate
