@@ -414,50 +414,7 @@
     </div>
   </div>
 
-  <!-- ══════════════════ BANNER COOKIES ══════════════════ -->
-  <div id="cookieBanner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
-    <div class="cookie-title"><i class="fas fa-cookie-bite"></i> Usamos cookies</div>
-    <p>
-      Utilizamos cookies técnicas necesarias para el funcionamiento del sitio y cookies analíticas (Google Analytics) para mejorar tu experiencia.
-      Consulta nuestra <a href="politica-de-cookies.html">política de cookies</a> para más información.
-    </p>
-    <div class="cookie-btns">
-      <button id="cookieAccept">Aceptar todas</button>
-      <button id="cookieReject">Solo necesarias</button>
-      <button id="cookieCustomize">Personalizar</button>
-    </div>
-  </div>
-
-  <!-- Modal personalización cookies -->
-  <div id="cookieModal" role="dialog" aria-modal="true" aria-label="Configuración de cookies">
-    <div class="cookie-modal-box">
-      <h3><i class="fas fa-sliders" style="color:var(--gold);margin-right:.5rem;"></i>Configuración de cookies</h3>
-
-      <div class="cookie-toggle-row">
-        <div>
-          <div class="cookie-toggle-label">Cookies técnicas</div>
-          <div class="cookie-toggle-desc">Necesarias para el funcionamiento del sitio. Siempre activas.</div>
-        </div>
-        <label class="toggle-switch">
-          <input type="checkbox" checked disabled />
-          <span class="toggle-slider"></span>
-        </label>
-      </div>
-
-      <div class="cookie-toggle-row">
-        <div>
-          <div class="cookie-toggle-label">Cookies analíticas</div>
-          <div class="cookie-toggle-desc">Google Analytics — nos ayudan a mejorar el sitio.</div>
-        </div>
-        <label class="toggle-switch">
-          <input type="checkbox" id="toggleAnalytics" />
-          <span class="toggle-slider"></span>
-        </label>
-      </div>
-
-      <button class="cookie-save-btn" id="cookieSave">Guardar preferencias</button>
-    </div>
-  </div>
+  <!-- Banner de cookies desactivado — activar cuando se use analytics -->
 
   <!-- ══════════════════ SCRIPTS ══════════════════ -->
   <!-- Bootstrap JS -->
@@ -489,39 +446,69 @@
     (function () {
       const form = document.getElementById('contactForm');
       if (!form) return;
+
       form.addEventListener('submit', async e => {
         e.preventDefault();
+
+        const resultado = document.getElementById('resultado');
+        const btn       = form.querySelector('.btn-submit');
+
+        // Validación mínima
+        const nombre  = document.getElementById('nombre').value.trim();
+        const email   = document.getElementById('email').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+        if (!nombre || !email || !mensaje) {
+          resultado.style.color = '#f87171';
+          resultado.textContent = 'Por favor rellena todos los campos obligatorios.';
+          return;
+        }
+
         const data = {
-          nombre:   document.getElementById('nombre').value.trim(),
-          email:    document.getElementById('email').value.trim(),
+          nombre,
+          email,
           telefono: document.getElementById('telefono').value.trim(),
-          mensaje:  document.getElementById('mensaje').value.trim()
+          mensaje
         };
-        const btn = form.querySelector('.btn-submit');
+
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando…';
+        resultado.style.color = '';
+        resultado.textContent = '';
+
+        // 60s de timeout — el SMTP de Zoho puede tardar
         const controller = new AbortController();
-        const tid = setTimeout(() => controller.abort(), 30000);
+        const tid = setTimeout(() => controller.abort(), 60000);
+
         try {
-          const res  = await fetch('https://telcogestion.onrender.com/send', {
-            method: 'POST',
+          const res = await fetch('https://telcogestion.onrender.com/send', {
+            method:  'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
-            signal: controller.signal
+            body:    JSON.stringify(data),
+            signal:  controller.signal
           });
           clearTimeout(tid);
-          const json = await res.json();
+
+          // Intentar parsear JSON sea cual sea el status
+          let json = {};
+          try { json = await res.json(); } catch (_) {}
+
           if (res.ok && json.success) {
-            document.getElementById('resultado').textContent = '✓ Mensaje enviado. Nos pondremos en contacto contigo pronto.';
+            resultado.style.color = '#4ade80';
+            resultado.textContent = '✓ Mensaje enviado. Nos pondremos en contacto contigo pronto.';
             form.reset();
           } else {
-            document.getElementById('resultado').textContent = 'Error al enviar: ' + (json.error || 'inténtalo de nuevo.');
+            resultado.style.color = '#f87171';
+            // server.js devuelve "message", no "error"
+            resultado.textContent = '⚠ ' + (json.message || json.error || 'Error al enviar, inténtalo de nuevo.');
           }
         } catch (err) {
           clearTimeout(tid);
-          document.getElementById('resultado').textContent = err.name === 'AbortError'
-            ? 'Tiempo de espera agotado. Inténtalo de nuevo.'
-            : 'Error de conexión: ' + err.message;
+          resultado.style.color = '#f87171';
+          if (err.name === 'AbortError') {
+            resultado.textContent = '⚠ El servidor tardó demasiado. El email puede haberse enviado igualmente — espera unos minutos antes de reintentar.';
+          } else {
+            resultado.textContent = '⚠ Error de conexión: ' + err.message;
+          }
         } finally {
           btn.disabled = false;
           btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Enviar consulta';
@@ -529,67 +516,7 @@
       });
     })();
 
-    // ── Cookies ──
-    function setCookie(name, val, days) {
-      const d = new Date();
-      d.setTime(d.getTime() + days * 864e5);
-      document.cookie = name + '=' + val + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
-    }
-    function getCookie(name) {
-      const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
-      return match ? match[1] : '';
-    }
-    function loadGA() {
-      if (window._gaLoaded) return;
-      window._gaLoaded = true;
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-27W7PCC1NC';
-      document.head.appendChild(s);
-      s.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-27W7PCC1NC', { anonymize_ip: true });
-      };
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const banner = document.getElementById('cookieBanner');
-      const modal  = document.getElementById('cookieModal');
-      const consent = getCookie('tg_consent');
-
-      if (!consent) {
-        banner.style.display = 'block';
-      } else if (consent === 'all' || (consent === 'custom' && getCookie('tg_analytics') === '1')) {
-        loadGA();
-      }
-
-      document.getElementById('cookieAccept').onclick = () => {
-        setCookie('tg_consent', 'all', 180);
-        setCookie('tg_analytics', '1', 180);
-        banner.style.display = 'none';
-        loadGA();
-      };
-      document.getElementById('cookieReject').onclick = () => {
-        setCookie('tg_consent', 'necessary', 180);
-        setCookie('tg_analytics', '0', 180);
-        banner.style.display = 'none';
-      };
-      document.getElementById('cookieCustomize').onclick = () => {
-        modal.classList.add('active');
-        document.getElementById('toggleAnalytics').checked = getCookie('tg_analytics') === '1';
-      };
-      modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
-      document.getElementById('cookieSave').onclick = () => {
-        const analytics = document.getElementById('toggleAnalytics').checked;
-        setCookie('tg_consent',   'custom',          180);
-        setCookie('tg_analytics', analytics ? '1' : '0', 180);
-        modal.classList.remove('active');
-        banner.style.display = 'none';
-        if (analytics) loadGA();
-      };
-    });
+    // Cookies desactivadas — activar cuando se use analytics
   </script>
 
 </body>
