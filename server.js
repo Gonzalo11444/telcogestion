@@ -8,10 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Transporter creado UNA sola vez al arrancar — no en cada petición
+// Transporter creado UNA sola vez al arrancar
 const transporter = nodemailer.createTransport({
-  host:   'smtppro.zoho.eu',
-  port:   465,
-  secure: true,
+  host:   'smtp.zoho.eu', // <-- IMPORTANTE: sin el "pro"
+  port:   587,            // <-- IMPORTANTE: puerto 587
+  secure: false,          // <-- IMPORTANTE: debe ser false para el puerto 587
   auth: {
     user: 'info@telcogestion.es',
     pass: process.env.EMAIL_PASS,
@@ -19,10 +20,10 @@ const transporter = nodemailer.createTransport({
   tls: {
     rejectUnauthorized: false
   },
-  // Aumentar timeouts SMTP para que no corte antes que el fetch del cliente
-  connectionTimeout: 20000,   // 20s para conectar al servidor SMTP
-  greetingTimeout:   15000,   // 15s para el saludo SMTP
-  socketTimeout:     30000,   // 30s de inactividad en el socket
+  // Mantenemos los timeouts que pusiste, están perfectos
+  connectionTimeout: 20000,   
+  greetingTimeout:   15000,   
+  socketTimeout:     30000,   
 });
 
 app.get('/', (req, res) => {
